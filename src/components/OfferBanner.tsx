@@ -56,7 +56,7 @@ export function OfferBanner({ onBuyNow }: OfferBannerProps) {
           <div className="flex justify-end mb-4">
             <div className="flex items-center gap-3 bg-red-600/90 backdrop-blur-sm px-4 py-2 rounded-full">
               <Flame className="w-5 h-5 text-yellow-300 animate-bounce" />
-              <span className="text-white">Limited Time Offer</span>
+              <span className="text-white">Обмежена пропозиція</span>
               <div className="flex items-center gap-1 bg-black/30 px-3 py-1 rounded-full">
                 <span className="text-white min-w-[2ch] text-center">{String(timeLeft.hours).padStart(2, '0')}</span>
                 <span className="text-white">:</span>
@@ -68,14 +68,14 @@ export function OfferBanner({ onBuyNow }: OfferBannerProps) {
           </div>
           
           <div className="text-center mb-8">
-            <h2 className="text-4xl mb-3 text-white uppercase">Spring Special Collection</h2>
+            <h2 className="text-4xl mb-3 text-white uppercase">Весняна спеціальна колекція</h2>
             <p className="text-xl text-gray-200">桜の季節限定コレクション</p>
           </div>
 
           <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-8">
             <div className="text-white">
               <p className="text-lg mb-4 text-gray-300">
-                Celebrate the cherry blossom season with our exclusive selection
+                Відсвяткуйте сезон вишневих квітів з нашою ексклюзивною колекцією
               </p>
               <div className="flex items-center gap-6">
                 <div>
@@ -84,7 +84,7 @@ export function OfferBanner({ onBuyNow }: OfferBannerProps) {
                 </div>
                 <div className="h-12 w-px bg-white/30"></div>
                 <div>
-                  <p className="text-sm text-gray-300">Save</p>
+                  <p className="text-sm text-gray-300">Економія</p>
                   <p className="text-2xl text-white">¥1,300</p>
                 </div>
               </div>
@@ -97,7 +97,7 @@ export function OfferBanner({ onBuyNow }: OfferBannerProps) {
               <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               <div className="relative inline-flex items-center gap-3">
                 <ShoppingBag className="w-5 h-5 text-yellow-300 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
-                <span className="uppercase tracking-wide">Buy Now</span>
+                <span className="uppercase tracking-wide">Купити зараз</span>
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>

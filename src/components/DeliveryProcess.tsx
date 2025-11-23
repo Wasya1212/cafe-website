@@ -4,27 +4,27 @@ export function DeliveryProcess() {
   const steps = [
     {
       icon: ShoppingBag,
-      title: 'Select Product',
+      title: 'Виберіть товар',
       description: '商品を選ぶ'
     },
     {
       icon: ShoppingCart,
-      title: 'Add to Cart',
+      title: 'Додати до кошика',
       description: 'カートに追加'
     },
     {
       icon: MapPin,
-      title: 'Select Location',
+      title: 'Виберіть місце',
       description: '場所を選択'
     },
     {
       icon: CreditCard,
-      title: 'Payment',
+      title: 'Оплата',
       description: 'お支払い'
     },
     {
       icon: Clock,
-      title: 'Wait for Delivery',
+      title: 'Очікуйте доставку',
       description: '配達を待つ'
     }
   ];
@@ -34,9 +34,9 @@ export function DeliveryProcess() {
       <div className="max-w-7xl mx-auto px-4">
         {/* Title and Description */}
         <div className="text-center mb-12">
-          <h2 className="mb-4">How It Works</h2>
+          <h2 className="mb-4">Як це працює</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Simple and easy ordering process. Select your favorite Japanese cakes, choose your delivery location, and enjoy fresh pastries delivered to your door.
+            Простий та зручний процес замовлення. Виберіть улюблені японські торти, оберіть місце доставки та насолоджуйтесь свіжими виробами, доставленими до ваших дверей.
           </p>
         </div>
 

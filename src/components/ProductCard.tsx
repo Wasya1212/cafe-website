@@ -54,7 +54,7 @@ export function ProductCard({ product, onAddToCart, onPreview }: ProductCardProp
               className="w-[100px] ml-3 bg-gray-100 text-gray-900 py-2 px-3 rounded-xl hover:bg-gray-200 transition-all duration-300 flex items-center justify-center gap-1 group/preview flex-shrink-0"
             >
               <Eye className="w-4 h-4 group-hover/preview:scale-110 transition-transform" />
-              <span className="text-sm">Preview</span>
+              <span className="text-sm">Перегляд</span>
             </button>
           )}
         </div>
@@ -81,7 +81,7 @@ export function ProductCard({ product, onAddToCart, onPreview }: ProductCardProp
           </div>
           {quantity > 1 && (
             <div className="text-xl text-red-700">
-              Total: ¥{(product.price * quantity).toLocaleString()}
+              Всього: ¥{(product.price * quantity).toLocaleString()}
             </div>
           )}
         </div>
@@ -110,7 +110,7 @@ export function ProductCard({ product, onAddToCart, onPreview }: ProductCardProp
               className="flex-1 bg-black text-white py-3 rounded-xl hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-md hover:shadow-lg"
             >
               <ShoppingBag className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
-              <span>Buy Now</span>
+              <span>Купити зараз</span>
             </button>
           </div>
         ) : (
@@ -137,7 +137,7 @@ export function ProductCard({ product, onAddToCart, onPreview }: ProductCardProp
               className="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-md hover:shadow-lg mb-3"
             >
               <ShoppingBag className="w-5 h-5 group-hover/btn:scale-110 transition-transform" />
-              <span>Buy Now</span>
+              <span>Купити зараз</span>
             </button>
 
             <button
@@ -145,7 +145,7 @@ export function ProductCard({ product, onAddToCart, onPreview }: ProductCardProp
               className="w-full bg-gray-100 text-gray-900 py-3 rounded-xl hover:bg-gray-200 transition-all duration-300 flex items-center justify-center gap-2 group/preview"
             >
               <Eye className="w-5 h-5 group-hover/preview:scale-110 transition-transform" />
-              <span>Preview</span>
+              <span>Перегляд</span>
             </button>
           </>
         )}

@@ -364,12 +364,12 @@ export function Shop({ onAddToCart, onNavigate }: ShopProps) {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const categories = [
-    { id: 'all', name: 'All Items', nameJa: 'すべて', icon: Sparkles, color: 'from-purple-400 to-pink-400', image: 'https://images.unsplash.com/photo-1752962640187-cfd373f4f553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMGRlc3NlcnRzJTIwdmFyaWV0eXxlbnwxfHx8fDE3NjM5MDkwMTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
-    { id: 'cakes', name: 'Cakes', nameJa: 'ケーキ', icon: Cake, color: 'from-pink-400 to-rose-400', image: 'https://images.unsplash.com/photo-1553739340-4043e61e457a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXBhbmVzZSUyMGRlc3NlcnRzJTIwY2FrZXN8ZW58MXx8fHwxNzYzOTA5MDA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
-    { id: 'traditional', name: 'Traditional', nameJa: '和菓子', icon: Flower2, color: 'from-amber-400 to-orange-400', image: 'https://images.unsplash.com/photo-1627308593413-3a3e02108920?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGphcGFuZXNlJTIwc3dlZXRzfGVufDF8fHx8MTc2MzkwOTAwOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
-    { id: 'seasonal', name: 'Seasonal', nameJa: '季節限定', icon: Sparkles, color: 'from-green-400 to-teal-400', image: 'https://images.unsplash.com/photo-1677225199893-295877b2d12e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZWFzb25hbCUyMGZydWl0c3xlbnwxfHx8fDE3NjM5MDkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
-    { id: 'gifts', name: 'Gifts', nameJa: 'ギフト', icon: Gift, color: 'from-blue-400 to-indigo-400', image: 'https://images.unsplash.com/photo-1759563871375-d5b140f6646e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnaWZ0JTIwYm94JTIwZWxlZ2FudHxlbnwxfHx8fDE3NjM4OTI4MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
-    { id: 'drinks', name: 'Drinks', nameJa: '飲み物', icon: Coffee, color: 'from-emerald-400 to-green-400', image: 'https://images.unsplash.com/photo-1722478347120-9cf07a219d9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXRjaGElMjB0ZWElMjBkcmlua3xlbnwxfHx8fDE3NjM5MDkwMTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
+    { id: 'all', name: 'Всі товари', nameJa: 'すべて', icon: Sparkles, color: 'from-purple-400 to-pink-400', image: 'https://images.unsplash.com/photo-1752962640187-cfd373f4f553?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMGRlc3NlcnRzJTIwdmFyaWV0eXxlbnwxfHx8fDE3NjM5MDkwMTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
+    { id: 'cakes', name: 'Торти', nameJa: 'ケーキ', icon: Cake, color: 'from-pink-400 to-rose-400', image: 'https://images.unsplash.com/photo-1553739340-4043e61e457a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXBhbmVzZSUyMGRlc3NlcnRzJTIwY2FrZXN8ZW58MXx8fHwxNzYzOTA5MDA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
+    { id: 'traditional', name: 'Традиційні', nameJa: '和菓子', icon: Flower2, color: 'from-amber-400 to-orange-400', image: 'https://images.unsplash.com/photo-1627308593413-3a3e02108920?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGphcGFuZXNlJTIwc3dlZXRzfGVufDF8fHx8MTc2MzkwOTAwOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
+    { id: 'seasonal', name: 'Сезонні', nameJa: '季節限定', icon: Sparkles, color: 'from-green-400 to-teal-400', image: 'https://images.unsplash.com/photo-1677225199893-295877b2d12e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZWFzb25hbCUyMGZydWl0c3xlbnwxfHx8fDE3NjM5MDkwMTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
+    { id: 'gifts', name: 'Подарунки', nameJa: 'ギフト', icon: Gift, color: 'from-blue-400 to-indigo-400', image: 'https://images.unsplash.com/photo-1759563871375-d5b140f6646e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnaWZ0JTIwYm94JTIwZWxlZ2FudHxlbnwxfHx8fDE3NjM4OTI4MDJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
+    { id: 'drinks', name: 'Напої', nameJa: '飲み物', icon: Coffee, color: 'from-emerald-400 to-green-400', image: 'https://images.unsplash.com/photo-1722478347120-9cf07a219d9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXRjaGElMjB0ZWElMjBkcmlua3xlbnwxfHx8fDE3NjM5MDkwMTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral' },
   ];
 
   const filteredProducts =
@@ -379,7 +379,7 @@ export function Shop({ onAddToCart, onNavigate }: ShopProps) {
 
   const handleAddToCart = (product: Product) => {
     onAddToCart(product);
-    setNotification(`Added ${product.name} to cart!`);
+    setNotification(`${product.name} додано до кошика!`);
     setTimeout(() => setNotification(''), 3000);
   };
 
@@ -395,7 +395,7 @@ export function Shop({ onAddToCart, onNavigate }: ShopProps) {
     for (let i = 0; i < quantity; i++) {
       onAddToCart(product);
     }
-    setNotification(`Added ${quantity}x ${product.name} to cart!`);
+    setNotification(`Додано ${quantity}x ${product.name} до кошика!`);
     setTimeout(() => setNotification(''), 3000);
   };
 
@@ -426,7 +426,7 @@ export function Shop({ onAddToCart, onNavigate }: ShopProps) {
       <div id="products-section" className="py-12 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-4xl mb-2 text-gray-900">Menu</h1>
+            <h1 className="text-4xl mb-2 text-gray-900">Меню</h1>
             <p className="text-xl text-gray-600">商品一覧</p>
           </div>
 
@@ -524,7 +524,7 @@ export function Shop({ onAddToCart, onNavigate }: ShopProps) {
                     for (let i = 0; i < qty; i++) {
                       onAddToCart(prod);
                     }
-                    setNotification(`Added ${qty}x ${prod.name} to cart!`);
+                    setNotification(`Додано ${qty}x ${prod.name} до кошика!`);
                     setTimeout(() => setNotification(''), 3000);
                   }}
                   onPreview={handleProductClick}

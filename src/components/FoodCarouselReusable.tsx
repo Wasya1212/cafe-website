@@ -127,7 +127,7 @@ export function FoodCarouselReusable({
 
                     {/* Quantity Selector */}
                     <div className="flex items-center gap-4 mb-6">
-                      <span className="text-gray-700">Quantity:</span>
+                      <span className="text-gray-700">Кількість:</span>
                       <div className="flex items-center gap-3">
                         <button
                           onClick={() => handleDecrement(item.id)}
@@ -156,7 +156,7 @@ export function FoodCarouselReusable({
                     >
                       <div className="relative inline-flex items-center justify-center gap-3 w-full">
                         <ShoppingCart className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                        <span className="uppercase tracking-wide">Add to Cart</span>
+                        <span className="uppercase tracking-wide">Додати до кошика</span>
                       </div>
                     </button>
                   </div>

@@ -34,7 +34,7 @@ export function AuthModal({ onClose, onLogin, onSignup }: AuthModalProps) {
 
         <div className="text-center mb-8">
           <h2 className="text-3xl mb-2 text-gray-900">
-            {isLogin ? 'Welcome Back' : 'Create Account'}
+            {isLogin ? 'Ласкаво просимо' : 'Створити акаунт'}
           </h2>
           <p className="text-gray-600">
             {isLogin ? 'おかえりなさい' : 'アカウント作成'}
@@ -44,20 +44,20 @@ export function AuthModal({ onClose, onLogin, onSignup }: AuthModalProps) {
         <form onSubmit={handleSubmit} className="space-y-4">
           {!isLogin && (
             <div>
-              <label className="block mb-2 text-gray-700">Name</label>
+              <label className="block mb-2 text-gray-700">Ім'я</label>
               <input
                 type="text"
                 value={name}
                 onChange={e => setName(e.target.value)}
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none"
                 required
-                placeholder="Your name"
+                placeholder="Ваше ім'я"
               />
             </div>
           )}
 
           <div>
-            <label className="block mb-2 text-gray-700">Email</label>
+            <label className="block mb-2 text-gray-700">Електронна пошта</label>
             <input
               type="email"
               value={email}
@@ -69,7 +69,7 @@ export function AuthModal({ onClose, onLogin, onSignup }: AuthModalProps) {
           </div>
 
           <div>
-            <label className="block mb-2 text-gray-700">Password</label>
+            <label className="block mb-2 text-gray-700">Пароль</label>
             <input
               type="password"
               value={password}
@@ -84,7 +84,7 @@ export function AuthModal({ onClose, onLogin, onSignup }: AuthModalProps) {
             type="submit"
             className="w-full py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
           >
-            {isLogin ? 'Sign In' : 'Create Account'}
+            {isLogin ? 'Увійти' : 'Створити акаунт'}
           </button>
         </form>
 
@@ -94,13 +94,13 @@ export function AuthModal({ onClose, onLogin, onSignup }: AuthModalProps) {
             className="text-red-600 hover:text-red-700 transition-colors"
           >
             {isLogin
-              ? "Don't have an account? Sign up"
-              : 'Already have an account? Sign in'}
+              ? "Немає акаунта? Зареєструватися"
+              : 'Вже є акаунт? Увійти'}
           </button>
         </div>
 
         <p className="mt-6 text-sm text-gray-500 text-center">
-          Note: This is a demo application. Your data is stored locally only.
+          Примітка: Це демонстраційний додаток. Ваші дані зберігаються лише локально.
         </p>
       </div>
     </div>

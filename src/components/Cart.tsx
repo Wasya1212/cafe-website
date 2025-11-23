@@ -16,13 +16,13 @@ export function Cart({ cart, onUpdateQuantity, onRemove, onNavigate }: CartProps
     return (
       <div className="min-h-[600px] flex flex-col items-center justify-center px-4">
         <ShoppingBag className="w-24 h-24 text-gray-300 mb-6" />
-        <h2 className="text-3xl mb-3 text-gray-900">Your Cart is Empty</h2>
+        <h2 className="text-3xl mb-3 text-gray-900">Ваш кошик порожній</h2>
         <p className="text-xl text-gray-600 mb-8">カートに商品がありません</p>
         <button
           onClick={() => onNavigate('shop')}
           className="px-8 py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
         >
-          Continue Shopping
+          Продовжити покупки
         </button>
       </div>
     );
@@ -32,7 +32,7 @@ export function Cart({ cart, onUpdateQuantity, onRemove, onNavigate }: CartProps
     <div className="py-12 px-4">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl mb-2 text-gray-900">Shopping Cart</h1>
+          <h1 className="text-4xl mb-2 text-gray-900">Кошик</h1>
           <p className="text-xl text-gray-600">ショッピングカート</p>
         </div>
 
@@ -94,7 +94,7 @@ export function Cart({ cart, onUpdateQuantity, onRemove, onNavigate }: CartProps
 
         <div className="bg-white rounded-lg shadow-md p-6">
           <div className="flex justify-between text-2xl mb-6">
-            <span className="text-gray-900">Total</span>
+            <span className="text-gray-900">Всього</span>
             <span className="text-red-600">¥{subtotal.toLocaleString()}</span>
           </div>
 
@@ -102,7 +102,7 @@ export function Cart({ cart, onUpdateQuantity, onRemove, onNavigate }: CartProps
             onClick={() => onNavigate('checkout')}
             className="w-full py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-lg"
           >
-            Proceed to Checkout
+            Оформити замовлення
           </button>
         </div>
       </div>

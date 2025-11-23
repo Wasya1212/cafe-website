@@ -77,7 +77,7 @@ export function DeliveryLocations() {
           {/* Delivery Information - 50% */}
           <div className="space-y-4">
             <div>
-              <h2 className="text-3xl mb-1 text-gray-900">We Deliver To</h2>
+              <h2 className="text-3xl mb-1 text-gray-900">Ми доставляємо до</h2>
               <p className="text-lg text-gray-600">配達エリア</p>
             </div>
 
@@ -116,7 +116,7 @@ export function DeliveryLocations() {
               onClick={scrollToProducts}
               className="w-full bg-red-600 text-white py-3 rounded-xl hover:bg-red-700 transition-colors flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
             >
-              <span>View Our Menu</span>
+              <span>Переглянути меню</span>
               <ArrowDown className="w-5 h-5" />
             </button>
           </div>

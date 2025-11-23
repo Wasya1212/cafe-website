@@ -105,21 +105,21 @@ export function ProductModal({ product, onClose, onAddToCart }: ProductModalProp
             <div className="text-3xl text-red-600">¥{product.price.toLocaleString()}</div>
             {quantity > 1 && (
               <div className="text-2xl text-red-700 mt-2">
-                Total: ¥{(product.price * quantity).toLocaleString()}
+                Всього: ¥{(product.price * quantity).toLocaleString()}
               </div>
             )}
           </div>
 
           {/* Description */}
           <div className="mb-6">
-            <h3 className="text-lg mb-2 text-gray-900">Description</h3>
+            <h3 className="text-lg mb-2 text-gray-900">Опис</h3>
             <p className="text-gray-700 leading-relaxed">{product.description}</p>
           </div>
 
           {/* Ingredients */}
           {product.ingredients && product.ingredients.length > 0 && (
             <div className="mb-6">
-              <h3 className="text-lg mb-3 text-gray-900">Ingredients</h3>
+              <h3 className="text-lg mb-3 text-gray-900">Інгредієнти</h3>
               <div className="flex flex-wrap gap-2">
                 {product.ingredients.map((ingredient, index) => (
                   <span
@@ -158,7 +158,7 @@ export function ProductModal({ product, onClose, onAddToCart }: ProductModalProp
               className="flex-1 bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
             >
               <ShoppingCart className="w-5 h-5" />
-              <span>Add to Cart</span>
+              <span>Додати до кошика</span>
             </button>
           </div>
         </div>

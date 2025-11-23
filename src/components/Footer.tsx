@@ -13,7 +13,7 @@ export function Footer({ onNavigate }: FooterProps) {
           {/* Contact Information */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl mb-4">Contact Us</h3>
+              <h3 className="text-2xl mb-4">Зв'яжіться з нами</h3>
               <p className="text-lg text-gray-400 mb-6">お問い合わせ</p>
             </div>
 
@@ -22,7 +22,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-red-400 flex-shrink-0" />
                 <div>
-                  <p className="text-sm text-gray-400">Phone</p>
+                  <p className="text-sm text-gray-400">Телефон</p>
                   <a href="tel:+81-3-1234-5678" className="text-lg hover:text-red-400 transition-colors">
                     +81-3-1234-5678
                   </a>
@@ -33,7 +33,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-red-400 flex-shrink-0" />
                 <div>
-                  <p className="text-sm text-gray-400">Email</p>
+                  <p className="text-sm text-gray-400">Електронна пошта</p>
                   <a href="mailto:info@cremecloud.jp" className="text-lg hover:text-red-400 transition-colors">
                     info@cremecloud.jp
                   </a>
@@ -44,7 +44,7 @@ export function Footer({ onNavigate }: FooterProps) {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-red-400 flex-shrink-0 mt-1" />
                 <div>
-                  <p className="text-sm text-gray-400">Delivery Areas</p>
+                  <p className="text-sm text-gray-400">Райони доставки</p>
                   <p className="text-lg">Shibuya & Shinjuku</p>
                   <p className="text-sm text-gray-500">渋谷区・新宿区</p>
                 </div>
@@ -55,7 +55,7 @@ export function Footer({ onNavigate }: FooterProps) {
           {/* Map */}
           <div>
             <p className="text-center mb-4 text-lg text-white">
-              Reminder we are delivering to :)
+              Нагадування: ми доставляємо до :)
             </p>
             <div className="relative h-[300px] rounded-xl overflow-hidden shadow-lg">
               <MapWithMarkers className="w-full h-full" />
@@ -73,27 +73,27 @@ export function Footer({ onNavigate }: FooterProps) {
                 className="text-sm text-gray-400 hover:text-white transition-colors"
                 onClick={() => onNavigate?.('privacy')}
               >
-                Privacy Policy
+                Політика конфіденційності
               </a>
               <a 
                 href="#terms" 
                 className="text-sm text-gray-400 hover:text-white transition-colors"
                 onClick={() => onNavigate?.('terms')}
               >
-                Terms of Service
+                Умови використання
               </a>
               <a 
                 href="#ordering" 
                 className="text-sm text-gray-400 hover:text-white transition-colors"
                 onClick={() => onNavigate?.('ordering')}
               >
-                Ordering Details
+                Деталі замовлення
               </a>
             </div>
 
             {/* Copyright */}
             <p className="text-sm text-gray-500">
-              © {new Date().getFullYear()} Crème & Cloud. All rights reserved.
+              © {new Date().getFullYear()} Crème & Cloud. Всі права захищені.
             </p>
           </div>
         </div>

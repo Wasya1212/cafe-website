@@ -36,21 +36,21 @@ export function Checkout({ cart, onCheckout, onNavigate }: CheckoutProps) {
     <div className="py-12 px-4">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl mb-2 text-gray-900">Checkout</h1>
+          <h1 className="text-4xl mb-2 text-gray-900">Оформлення замовлення</h1>
           <p className="text-xl text-gray-600">お会計</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Checkout Form */}
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-2xl mb-6 text-gray-900">Delivery Details</h2>
+            <h2 className="text-2xl mb-6 text-gray-900">Деталі доставки</h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Delivery Address */}
               <div>
                 <label className="flex items-center gap-2 mb-2 text-gray-700">
                   <MapPin className="w-5 h-5 text-red-600" />
-                  <span>Delivery Area</span>
+                  <span>Район доставки</span>
                 </label>
                 <select
                   value={deliveryAddress}
@@ -58,7 +58,7 @@ export function Checkout({ cart, onCheckout, onNavigate }: CheckoutProps) {
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none"
                   required
                 >
-                  <option value="">Select delivery area</option>
+                  <option value="">Виберіть район доставки</option>
                   {deliveryAreas.map(area => (
                     <option key={area} value={area}>
                       {area}
@@ -66,7 +66,7 @@ export function Checkout({ cart, onCheckout, onNavigate }: CheckoutProps) {
                   ))}
                 </select>
                 <p className="text-sm text-gray-500 mt-2">
-                  We currently deliver to selected areas in Tokyo
+                  Наразі ми доставляємо до вибраних районів Токіо
                 </p>
               </div>
 
@@ -74,7 +74,7 @@ export function Checkout({ cart, onCheckout, onNavigate }: CheckoutProps) {
               <div>
                 <label className="flex items-center gap-2 mb-2 text-gray-700">
                   <Clock className="w-5 h-5 text-red-600" />
-                  <span>Delivery Time</span>
+                  <span>Час доставки</span>
                 </label>
                 <div className="grid grid-cols-2 gap-3">
                   {timeSlots.map(slot => (
@@ -99,7 +99,7 @@ export function Checkout({ cart, onCheckout, onNavigate }: CheckoutProps) {
                 className="w-full py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-lg disabled:bg-gray-300 disabled:cursor-not-allowed"
                 disabled={!deliveryAddress || !deliveryTime}
               >
-                Place Order
+                Оформити замовлення
               </button>
             </form>
           </div>
@@ -107,7 +107,7 @@ export function Checkout({ cart, onCheckout, onNavigate }: CheckoutProps) {
           {/* Order Summary */}
           <div>
             <div className="bg-white rounded-lg shadow-md p-6 sticky top-24">
-              <h2 className="text-2xl mb-6 text-gray-900">Order Summary</h2>
+              <h2 className="text-2xl mb-6 text-gray-900">Підсумок замовлення</h2>
 
               <div className="space-y-4 mb-6">
                 {cart.map(item => (
@@ -122,11 +122,11 @@ export function Checkout({ cart, onCheckout, onNavigate }: CheckoutProps) {
 
               <div className="border-t border-gray-200 pt-4 space-y-3">
                 <div className="flex justify-between text-gray-700">
-                  <span>Subtotal</span>
+                  <span>Підсумок</span>
                   <span>¥{subtotal.toLocaleString()}</span>
                 </div>
                 <div className="border-t border-gray-200 pt-3 flex justify-between text-2xl">
-                  <span className="text-gray-900">Total</span>
+                  <span className="text-gray-900">Всього</span>
                   <span className="text-red-600">¥{subtotal.toLocaleString()}</span>
                 </div>
               </div>
@@ -134,10 +134,10 @@ export function Checkout({ cart, onCheckout, onNavigate }: CheckoutProps) {
               {deliveryAddress && deliveryTime && (
                 <div className="mt-6 p-4 bg-red-50 rounded-lg">
                   <p className="text-sm mb-2 text-gray-700">
-                    <strong>Delivery to:</strong> {deliveryAddress}
+                    <strong>Доставка до:</strong> {deliveryAddress}
                   </p>
                   <p className="text-sm text-gray-700">
-                    <strong>Time:</strong> {deliveryTime}
+                    <strong>Час:</strong> {deliveryTime}
                   </p>
                 </div>
               )}

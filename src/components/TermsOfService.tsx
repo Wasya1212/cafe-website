@@ -15,166 +15,166 @@ export function TermsOfService({ onNavigate }: TermsOfServiceProps) {
             className="flex items-center gap-2 text-gray-600 hover:text-red-600 transition-colors mb-6"
           >
             <ArrowLeft className="w-5 h-5" />
-            Back to Home
+            На головну
           </button>
           
           <div className="text-center mb-8">
             <FileText className="w-16 h-16 text-red-600 mx-auto mb-4" />
-            <h1 className="text-4xl mb-2 text-gray-900">Terms of Service</h1>
+            <h1 className="text-4xl mb-2 text-gray-900">Умови використання</h1>
             <p className="text-xl text-gray-600">利用規約</p>
-            <p className="text-sm text-gray-500 mt-4">Last Updated: November 23, 2025</p>
+            <p className="text-sm text-gray-500 mt-4">Останнє оновлення: 23 листопада 2025</p>
           </div>
         </div>
 
         {/* Content */}
         <div className="bg-white rounded-lg shadow-md p-8 space-y-8">
           <section>
-            <h2 className="text-2xl mb-4 text-gray-900">Agreement to Terms</h2>
+            <h2 className="text-2xl mb-4 text-gray-900">Згода з умовами</h2>
             <p className="text-gray-700 leading-relaxed">
-              By accessing and using Crème & Cloud (クレーム&クラウド) website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+              Отримуючи доступ та використовуючи веб-сайт та послуги Crème & Cloud (クレーム&クラウド), ви погоджуєтеся дотримуватися цих Умов використання. Якщо ви не згодні з цими умовами, будь ласка, не використовуйте наші послуги.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4 text-gray-900">Service Description</h2>
+            <h2 className="text-2xl mb-4 text-gray-900">Опис послуг</h2>
             <p className="text-gray-700 leading-relaxed mb-3">
-              Crème & Cloud provides online ordering and delivery services for Japanese-style cakes and confections. Our services include:
+              Crème & Cloud надає послуги онлайн-замовлення та доставки японських тортів та солодощів. Наші послуги включають:
             </p>
             <ul className="space-y-2 text-gray-700 list-disc list-inside">
-              <li>Online product browsing and ordering</li>
-              <li>Scheduled delivery to Shibuya and Shinjuku areas</li>
-              <li>Three daily delivery time slots: 9:00, 13:00, and 19:00</li>
-              <li>Shopping cart and checkout functionality</li>
+              <li>Онлайн-перегляд та замовлення продуктів</li>
+              <li>Планова доставка до районів Шібуя та Шінджуку</li>
+              <li>Три щоденні часові слоти доставки: 9:00, 13:00 та 19:00</li>
+              <li>Функціональність кошика та оформлення замовлення</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4 text-gray-900">Ordering and Payment</h2>
+            <h2 className="text-2xl mb-4 text-gray-900">Замовлення та оплата</h2>
             <div className="space-y-4 text-gray-700">
               <div>
-                <h3 className="text-lg mb-2 text-gray-900">Order Placement</h3>
+                <h3 className="text-lg mb-2 text-gray-900">Оформлення замовлення</h3>
                 <p className="leading-relaxed">
-                  When you place an order through our website, you are making an offer to purchase products. We reserve the right to accept or decline any order at our discretion.
+                  Коли ви оформлюєте замовлення через наш веб-сайт, ви робите пропозицію на покупку продуктів. Ми залишаємо за собою право прийняти або відхилити будь-яке замовлення на наш розсуд.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg mb-2 text-gray-900">Pricing</h3>
+                <h3 className="text-lg mb-2 text-gray-900">Ціноутворення</h3>
                 <p className="leading-relaxed">
-                  All prices are listed in Japanese Yen (¥) and are inclusive of applicable taxes. We reserve the right to modify prices at any time without prior notice.
+                  Всі ціни вказані в японських єнах (¥) та включають відповідні податки. Ми залишаємо за собою право змінювати ціни в будь-який час без попереднього повідомлення.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg mb-2 text-gray-900">Payment</h3>
+                <h3 className="text-lg mb-2 text-gray-900">Оплата</h3>
                 <p className="leading-relaxed">
-                  Payment is required at the time of order placement. We accept various payment methods as indicated during checkout.
+                  Оплата потрібна під час оформлення замовлення. Ми приймаємо різні способи оплати, як зазначено під час оформлення замовлення.
                 </p>
               </div>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4 text-gray-900">Delivery Terms</h2>
+            <h2 className="text-2xl mb-4 text-gray-900">Умови доставки</h2>
             <div className="space-y-4 text-gray-700">
               <div>
-                <h3 className="text-lg mb-2 text-gray-900">Delivery Areas</h3>
+                <h3 className="text-lg mb-2 text-gray-900">Райони доставки</h3>
                 <p className="leading-relaxed">
-                  We currently deliver only to designated areas within Shibuya (渋谷区) and Shinjuku (新宿区), Tokyo. Orders to addresses outside these areas cannot be fulfilled.
+                  Наразі ми доставляємо лише до визначених районів у Шібуя (渋谷区) та Шінджуку (新宿区), Токіо. Замовлення на адреси поза цими районами не можуть бути виконані.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg mb-2 text-gray-900">Delivery Times</h3>
+                <h3 className="text-lg mb-2 text-gray-900">Час доставки</h3>
                 <p className="leading-relaxed">
-                  Deliveries are scheduled for three time slots: 9:00 AM, 1:00 PM, and 7:00 PM. While we strive to deliver within your selected time slot, delays may occur due to unforeseen circumstances.
+                  Доставки заплановані на три часові слоти: 9:00 ранку, 13:00 дня та 19:00 вечора. Хоча ми прагнемо доставити в межах вибраного вами часового слота, можуть виникнути затримки через непередбачені обставини.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg mb-2 text-gray-900">Delivery Responsibility</h3>
+                <h3 className="text-lg mb-2 text-gray-900">Відповідальність за доставку</h3>
                 <p className="leading-relaxed">
-                  You must provide accurate delivery information. We are not responsible for failed deliveries due to incorrect addresses or unavailability at the delivery location.
+                  Ви повинні надати точну інформацію про доставку. Ми не несемо відповідальності за невдалі доставки через неправильні адреси або недоступність у місці доставки.
                 </p>
               </div>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4 text-gray-900">Product Quality and Freshness</h2>
+            <h2 className="text-2xl mb-4 text-gray-900">Якість та свіжість продуктів</h2>
             <p className="text-gray-700 leading-relaxed mb-3">
-              We take pride in the quality and freshness of our products. All cakes and confections are prepared with care using premium ingredients. Due to the nature of fresh bakery products:
+              Ми пишаємося якістю та свіжістю наших продуктів. Всі торти та солодощі готуються з дбайливістю з використанням преміальних інгредієнтів. Через природу свіжих хлібобулочних виробів:
             </p>
             <ul className="space-y-2 text-gray-700 list-disc list-inside">
-              <li>Products should be consumed within the recommended timeframe</li>
-              <li>Proper refrigeration may be required for certain items</li>
-              <li>We are not responsible for product quality after delivery</li>
+              <li>Продукти слід споживати в межах рекомендованого терміну</li>
+              <li>Для деяких товарів може знадобитися належне охолодження</li>
+              <li>Ми не несемо відповідальності за якість продукту після доставки</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4 text-gray-900">Cancellations and Refunds</h2>
+            <h2 className="text-2xl mb-4 text-gray-900">Скасування та повернення коштів</h2>
             <div className="space-y-4 text-gray-700">
               <div>
-                <h3 className="text-lg mb-2 text-gray-900">Order Cancellation</h3>
+                <h3 className="text-lg mb-2 text-gray-900">Скасування замовлення</h3>
                 <p className="leading-relaxed">
-                  Orders may be cancelled within 2 hours of placement. After this period, orders are prepared for delivery and cannot be cancelled.
+                  Замовлення можуть бути скасовані протягом 2 годин після оформлення. Після цього періоду замовлення готуються до доставки та не можуть бути скасовані.
                 </p>
               </div>
               <div>
-                <h3 className="text-lg mb-2 text-gray-900">Refund Policy</h3>
+                <h3 className="text-lg mb-2 text-gray-900">Політика повернення коштів</h3>
                 <p className="leading-relaxed">
-                  Refunds are issued for cancelled orders within the cancellation period, or in cases where products are damaged or do not meet quality standards upon delivery.
+                  Повернення коштів здійснюється для скасованих замовлень у межах періоду скасування або у випадках, коли продукти пошкоджені або не відповідають стандартам якості при доставці.
                 </p>
               </div>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4 text-gray-900">Allergies and Dietary Restrictions</h2>
+            <h2 className="text-2xl mb-4 text-gray-900">Алергії та дієтичні обмеження</h2>
             <p className="text-gray-700 leading-relaxed">
-              While we provide ingredient information for our products, we cannot guarantee that our products are free from allergens. Customers with food allergies or dietary restrictions should exercise caution and contact us before ordering.
+              Хоча ми надаємо інформацію про інгредієнти для наших продуктів, ми не можемо гарантувати, що наші продукти не містять алергенів. Клієнти з алергіями на продукти харчування або дієтичними обмеженнями повинні бути обережними та зв'язатися з нами перед замовленням.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4 text-gray-900">Intellectual Property</h2>
+            <h2 className="text-2xl mb-4 text-gray-900">Інтелектуальна власність</h2>
             <p className="text-gray-700 leading-relaxed">
-              All content on the Crème & Cloud website, including images, text, logos, and designs, is the property of Crème & Cloud and is protected by copyright and trademark laws. Unauthorized use is prohibited.
+              Весь контент на веб-сайті Crème & Cloud, включаючи зображення, текст, логотипи та дизайн, є власністю Crème & Cloud та захищений законами про авторське право та торгові марки. Несанкціоноване використання заборонено.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4 text-gray-900">Limitation of Liability</h2>
+            <h2 className="text-2xl mb-4 text-gray-900">Обмеження відповідальності</h2>
             <p className="text-gray-700 leading-relaxed">
-              Crème & Cloud shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services or products. Our liability is limited to the amount paid for the order in question.
+              Crème & Cloud не несе відповідальності за будь-які непрямі, випадкові або наслідкові збитки, що виникають від використання наших послуг або продуктів. Наша відповідальність обмежена сумою, сплаченою за відповідне замовлення.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4 text-gray-900">Changes to Terms</h2>
+            <h2 className="text-2xl mb-4 text-gray-900">Зміни до умов</h2>
             <p className="text-gray-700 leading-relaxed">
-              We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting. Your continued use of our services constitutes acceptance of the modified terms.
+              Ми залишаємо за собою право змінювати ці Умови використання в будь-який час. Зміни набудуть чинності негайно після публікації. Ваше подальше використання наших послуг означає прийняття змінених умов.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4 text-gray-900">Governing Law</h2>
+            <h2 className="text-2xl mb-4 text-gray-900">Застосовне право</h2>
             <p className="text-gray-700 leading-relaxed">
-              These Terms of Service are governed by the laws of Japan. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts of Tokyo.
+              Ці Умови використання регулюються законами Японії. Будь-які спори, що виникають з цих умов, підлягають виключній юрисдикції судів Токіо.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl mb-4 text-gray-900">Contact Information</h2>
+            <h2 className="text-2xl mb-4 text-gray-900">Контактна інформація</h2>
             <p className="text-gray-700 leading-relaxed mb-3">
-              If you have any questions about these Terms of Service, please contact us:
+              Якщо у вас є питання щодо цих Умов використання, будь ласка, зв'яжіться з нами:
             </p>
             <div className="bg-stone-50 p-4 rounded-lg space-y-2">
               <p className="text-gray-700">
-                <strong>Phone:</strong> +81-3-1234-5678
+                <strong>Телефон:</strong> +81-3-1234-5678
               </p>
               <p className="text-gray-700">
-                <strong>Email:</strong> info@cremecloud.jp
+                <strong>Електронна пошта:</strong> info@cremecloud.jp
               </p>
               <p className="text-gray-700">
-                <strong>Delivery Areas:</strong> Shibuya & Shinjuku, Tokyo
+                <strong>Райони доставки:</strong> Shibuya & Shinjuku, Tokyo
               </p>
             </div>
           </section>
