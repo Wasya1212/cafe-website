@@ -16,7 +16,7 @@ export type OrderData = {
 
 export async function sendOrderToBot(order: OrderData) {
   try {
-    const response = await fetch("http://localhost:3001/order", {
+    const response = await fetch("https://cafee-bot.onrender.com/order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
