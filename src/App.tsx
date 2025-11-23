@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Shop } from './components/Shop';
 import { Cart } from './components/Cart';
 import { Checkout } from './components/Checkout';
@@ -8,6 +8,7 @@ import { TermsOfService } from './components/TermsOfService';
 import { OrderingDetails } from './components/OrderingDetails';
 import { Header } from './components/Header';
 import { sendOrderToBot } from './utils/orderBot';
+import { loadCartFromStorage, saveCartToStorage, clearCartFromStorage } from './utils/cartStorage';
 
 export type Product = {
   id: string;
@@ -32,7 +33,26 @@ type Page = 'home' | 'shop' | 'cart' | 'checkout' | 'confirmation' | 'privacy' |
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
-  const [cart, setCart] = useState<CartItem[]>([]);
+  // Initialize cart from localStorage
+  const [cart, setCart] = useState<CartItem[]>(() => loadCartFromStorage());
+
+  // Load cart from localStorage on mount
+  useEffect(() => {
+    const savedCart = loadCartFromStorage();
+    if (savedCart.length > 0) {
+      setCart(savedCart);
+    }
+  }, []);
+
+  // Save cart to localStorage whenever it changes
+  useEffect(() => {
+    if (cart.length > 0) {
+      saveCartToStorage(cart);
+    } else {
+      // If cart is empty, clear from storage
+      clearCartFromStorage();
+    }
+  }, [cart]);
 
   const addToCart = (product: Product) => {
     setCart(prevCart => {
@@ -66,6 +86,7 @@ export default function App() {
 
   const clearCart = () => {
     setCart([]);
+    clearCartFromStorage();
   };
 
   const generateOrderId = (): string => {
