@@ -7,6 +7,7 @@ import { PrivacyPolicy } from './components/PrivacyPolicy';
 import { TermsOfService } from './components/TermsOfService';
 import { OrderingDetails } from './components/OrderingDetails';
 import { Header } from './components/Header';
+import { sendOrderToBot } from './utils/orderBot';
 
 export type Product = {
   id: string;
@@ -67,7 +68,72 @@ export default function App() {
     setCart([]);
   };
 
-  const handleCheckout = (deliveryAddress: string, deliveryTime: string) => {
+  const generateOrderId = (): string => {
+    const year = new Date().getFullYear();
+    const randomNum = Math.floor(Math.random() * 100000).toString().padStart(5, '0');
+    return `ORD-${year}-${randomNum}`;
+  };
+
+  const formatDateTime = (date: Date, timeSlot: string): string => {
+    const [hours, minutes] = timeSlot.split(':');
+    const dateTime = new Date(date);
+    dateTime.setHours(parseInt(hours), parseInt(minutes || '0'), 0, 0);
+    
+    // Format as ISO string with timezone offset
+    const offset = -dateTime.getTimezoneOffset();
+    const sign = offset >= 0 ? '+' : '-';
+    const offsetHours = Math.floor(Math.abs(offset) / 60).toString().padStart(2, '0');
+    const offsetMinutes = (Math.abs(offset) % 60).toString().padStart(2, '0');
+    
+    const year = dateTime.getFullYear();
+    const month = (dateTime.getMonth() + 1).toString().padStart(2, '0');
+    const day = dateTime.getDate().toString().padStart(2, '0');
+    const hoursStr = dateTime.getHours().toString().padStart(2, '0');
+    const minutesStr = dateTime.getMinutes().toString().padStart(2, '0');
+    const secondsStr = dateTime.getSeconds().toString().padStart(2, '0');
+    
+    return `${year}-${month}-${day}T${hoursStr}:${minutesStr}:${secondsStr}${sign}${offsetHours}:${offsetMinutes}`;
+  };
+
+  const handleCheckout = async (orderData: {
+    address: string;
+    time: string;
+    customerName: string;
+    phone: string;
+    paymentMethod: string;
+    comment?: string;
+  }) => {
+    // Prepare order data for bot
+    const orderId = generateOrderId();
+    const datetime = formatDateTime(new Date(), orderData.time);
+    
+    const order = {
+      orderId,
+      customerName: orderData.customerName,
+      phone: orderData.phone,
+      address: orderData.address,
+      datetime,
+      paymentMethod: orderData.paymentMethod,
+      items: cart.map((item) => ({
+        name: item.product.name,
+        count: item.quantity,
+        price: item.product.price,
+      })),
+      totalPrice: cart.reduce((sum, item) => sum + item.product.price * item.quantity, 0),
+      ...(orderData.comment && { comment: orderData.comment }),
+    };
+
+    // Send order to Telegram bot
+    const result = await sendOrderToBot(order);
+    
+    if (result.success) {
+      console.log('✅ Order successfully sent to bot');
+    } else {
+      console.error('❌ Failed to send order to bot:', result.error);
+      // You might want to show an error message to the user here
+      // For now, we'll still proceed with the checkout
+    }
+
     // Clear cart and show confirmation
     clearCart();
     setCurrentPage('confirmation');

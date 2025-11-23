@@ -1,10 +1,17 @@
 import { useState } from 'react';
-import { Clock, MapPin } from 'lucide-react';
+import { Clock, MapPin, User, Phone, CreditCard, MessageSquare } from 'lucide-react';
 import type { CartItem } from '../App';
 
 type CheckoutProps = {
   cart: CartItem[];
-  onCheckout: (address: string, time: string) => void;
+  onCheckout: (orderData: {
+    address: string;
+    time: string;
+    customerName: string;
+    phone: string;
+    paymentMethod: string;
+    comment?: string;
+  }) => void;
   onNavigate: (page: 'cart') => void;
 };
 
@@ -22,13 +29,24 @@ const timeSlots = [
 export function Checkout({ cart, onCheckout, onNavigate }: CheckoutProps) {
   const [deliveryAddress, setDeliveryAddress] = useState('');
   const [deliveryTime, setDeliveryTime] = useState('');
+  const [customerName, setCustomerName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [paymentMethod, setPaymentMethod] = useState('cash');
+  const [comment, setComment] = useState('');
 
   const subtotal = cart.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (deliveryAddress && deliveryTime) {
-      onCheckout(deliveryAddress, deliveryTime);
+    if (deliveryAddress && deliveryTime && customerName && phone) {
+      onCheckout({
+        address: deliveryAddress,
+        time: deliveryTime,
+        customerName,
+        phone,
+        paymentMethod,
+        comment: comment.trim() || undefined,
+      });
     }
   };
 
@@ -46,6 +64,38 @@ export function Checkout({ cart, onCheckout, onNavigate }: CheckoutProps) {
             <h2 className="text-2xl mb-6 text-gray-900">Деталі доставки</h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Customer Name */}
+              <div>
+                <label className="flex items-center gap-2 mb-2 text-gray-700">
+                  <User className="w-5 h-5 text-red-600" />
+                  <span>Ім'я</span>
+                </label>
+                <input
+                  type="text"
+                  value={customerName}
+                  onChange={e => setCustomerName(e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none"
+                  placeholder="Ваше ім'я"
+                  required
+                />
+              </div>
+
+              {/* Phone */}
+              <div>
+                <label className="flex items-center gap-2 mb-2 text-gray-700">
+                  <Phone className="w-5 h-5 text-red-600" />
+                  <span>Телефон</span>
+                </label>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={e => setPhone(e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none"
+                  placeholder="+380501234567"
+                  required
+                />
+              </div>
+
               {/* Delivery Address */}
               <div>
                 <label className="flex items-center gap-2 mb-2 text-gray-700">
@@ -76,7 +126,7 @@ export function Checkout({ cart, onCheckout, onNavigate }: CheckoutProps) {
                   <Clock className="w-5 h-5 text-red-600" />
                   <span>Час доставки</span>
                 </label>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-3 gap-3">
                   {timeSlots.map(slot => (
                     <button
                       key={slot}
@@ -94,10 +144,43 @@ export function Checkout({ cart, onCheckout, onNavigate }: CheckoutProps) {
                 </div>
               </div>
 
+              {/* Payment Method */}
+              <div>
+                <label className="flex items-center gap-2 mb-2 text-gray-700">
+                  <CreditCard className="w-5 h-5 text-red-600" />
+                  <span>Спосіб оплати</span>
+                </label>
+                <select
+                  value={paymentMethod}
+                  onChange={e => setPaymentMethod(e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none"
+                  required
+                >
+                  <option value="cash">Готівка</option>
+                  <option value="card">Картка</option>
+                  <option value="online">Онлайн оплата</option>
+                </select>
+              </div>
+
+              {/* Comment */}
+              <div>
+                <label className="flex items-center gap-2 mb-2 text-gray-700">
+                  <MessageSquare className="w-5 h-5 text-red-600" />
+                  <span>Коментар (необов'язково)</span>
+                </label>
+                <textarea
+                  value={comment}
+                  onChange={e => setComment(e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-red-600 focus:outline-none resize-none"
+                  placeholder="Додаткові побажання до замовлення..."
+                  rows={3}
+                />
+              </div>
+
               <button
                 type="submit"
                 className="w-full py-4 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-lg disabled:bg-gray-300 disabled:cursor-not-allowed"
-                disabled={!deliveryAddress || !deliveryTime}
+                disabled={!deliveryAddress || !deliveryTime || !customerName || !phone}
               >
                 Оформити замовлення
               </button>
