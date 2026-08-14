@@ -38,11 +38,11 @@ export function Header({ onNavigate, cartItemCount }: HeaderProps) {
 
           <div className="flex items-center gap-4">
             <a
-              href="tel:+81-3-1234-5677"
+              href="tel:+81-3-1234-5678"
               className="flex items-center gap-2 text-gray-700 hover:text-red-600 transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline text-sm">03-1234-5677</span>
+              <span className="hidden sm:inline text-sm">03-1234-5678</span>
             </a>
 
             <button

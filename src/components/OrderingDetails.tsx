@@ -261,8 +261,8 @@ export function OrderingDetails({ onNavigate }: OrderingDetailsProps) {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Телефон</p>
-                  <a href="tel:+81-3-1234-5677" className="text-lg hover:text-red-600 transition-colors">
-                    +81-3-1234-5677
+                  <a href="tel:+81-3-1234-5678" className="text-lg hover:text-red-600 transition-colors">
+                    +81-3-1234-5678
                   </a>
                 </div>
               </div>

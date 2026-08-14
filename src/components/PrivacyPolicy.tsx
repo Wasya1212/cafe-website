@@ -104,7 +104,7 @@ export function PrivacyPolicy({ onNavigate }: PrivacyPolicyProps) {
             </p>
             <div className="bg-stone-50 p-4 rounded-lg space-y-2">
               <p className="text-gray-700">
-                <strong>Телефон:</strong> +81-3-1234-5677
+                <strong>Телефон:</strong> +81-3-1234-5678
               </p>
               <p className="text-gray-700">
                 <strong>Електронна пошта:</strong> info@cremecloud.jp
