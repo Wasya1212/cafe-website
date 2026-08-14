@@ -23,8 +23,8 @@ export function Footer({ onNavigate }: FooterProps) {
                 <Phone className="w-5 h-5 text-red-400 flex-shrink-0" />
                 <div>
                   <p className="text-sm text-gray-400">Телефон</p>
-                  <a href="tel:+81-3-1234-5678" className="text-lg hover:text-red-400 transition-colors">
-                    +81-3-1234-5678
+                  <a href="tel:+81-3-1234-5677" className="text-lg hover:text-red-400 transition-colors">
+                    +81-3-1234-5677
                   </a>
                 </div>
               </div>

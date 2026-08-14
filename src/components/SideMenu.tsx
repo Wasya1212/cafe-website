@@ -96,11 +96,11 @@ export function SideMenu({ onClose, onNavigate, cartItemCount, user, onLogout, o
         <div className="p-6 border-t border-gray-200 bg-gray-50">
           <p className="text-sm text-gray-600 mb-2">Зв'яжіться з нами</p>
           <a
-            href="tel:+81-3-1234-5678"
+            href="tel:+81-3-1234-5677"
             className="text-red-600 hover:text-red-700 transition-colors flex items-center gap-2"
           >
             <span>📞</span>
-            <span>03-1234-5678</span>
+            <span>03-1234-5677</span>
           </a>
         </div>
       </div>
