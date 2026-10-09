@@ -1,0 +1,54 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Verify build
+        run: npm run build --if-present
+        env:
+          NODE_ENV: production
+
+      - name: Create Deployment Archive
+        run: zip -r build.zip dist/ build/ 2>/dev/null || zip -r build.zip . -x "node_modules/*" ".git/*"
+
+      - name: Deploy to Creator
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+        env:
+          CREATOR_USER_TOKEN: ${{ secrets.CREATOR_USER_TOKEN }}
+        run: |
+          curl --fail --show-error --max-time 120 \
+            -X POST \
+            -H "Authorization: $CREATOR_USER_TOKEN" \
+            -F "file=@build.zip" \
+            "https://hulkier-eagerly-spencer.ngrok-free.dev/api/git-deploy/github/bd65c3c8-d0f9-412a-9f61-9143a91bc984"
+
